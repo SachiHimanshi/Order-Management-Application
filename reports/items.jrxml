@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="items" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="87762ef8-23c9-4386-9000-10545ca1359a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     items_shoe.`itemid` AS items_shoe_itemid,
+     items_shoe.`name` AS items_shoe_name,
+     items_shoe.`category` AS items_shoe_category,
+     items_shoe.`price` AS items_shoe_price,
+     items_shoe.`Discription` AS items_shoe_Discription,
+     items_shoe.`image` AS items_shoe_image
+FROM
+     `items_shoe` items_shoe]]>
+	</queryString>
+	<field name="items_shoe_itemid" class="java.lang.Integer"/>
+	<field name="items_shoe_name" class="java.lang.String"/>
+	<field name="items_shoe_category" class="java.lang.String"/>
+	<field name="items_shoe_price" class="java.lang.String"/>
+	<field name="items_shoe_Discription" class="java.lang.String"/>
+	<field name="items_shoe_image" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="e0e51130-b271-4e10-8c81-c5f3a28c3486"/>
+				<imageExpression><![CDATA["leaf_banner_violet.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="1dad2f47-52ff-45a8-8491-cb32cfa2a2fd"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Tick Tock]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="46" width="200" height="22" uuid="20f4d2be-8539-4390-a3cf-97e125554c50"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Items]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="ead3534b-aba9-4048-add7-1db98e68cc10"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="92" height="15" uuid="8278313c-cb0f-4d3a-a304-53a32483154c"/>
+				<text><![CDATA[items_shoe_itemid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="92" y="19" width="92" height="15" uuid="0118cc91-ee13-4d0e-bd2e-fb6e8408bcd3"/>
+				<text><![CDATA[items_shoe_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="184" y="19" width="92" height="15" uuid="2eacdcc3-5a7e-4c3f-b82c-f48e5f31f796"/>
+				<text><![CDATA[items_shoe_category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="19" width="92" height="15" uuid="9675bafb-1236-409e-ba29-f1183c6eed6f"/>
+				<text><![CDATA[items_shoe_price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="368" y="19" width="92" height="15" uuid="a32200d8-cf99-40cc-904b-a7d9ad640998"/>
+				<text><![CDATA[items_shoe_Discription]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="460" y="19" width="92" height="15" uuid="bd876b47-9eed-414f-b9d6-89cb8b6d9253"/>
+				<text><![CDATA[items_shoe_image]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="85013e85-b8b5-472c-9983-7200cfea1857"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="92" height="15" uuid="68f266ba-9e6f-4789-a4ea-bfaefe7f197f"/>
+				<textFieldExpression><![CDATA[$F{items_shoe_itemid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="92" y="0" width="92" height="15" uuid="4568c247-3964-4f2a-a179-db570645cc32"/>
+				<textFieldExpression><![CDATA[$F{items_shoe_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="184" y="0" width="92" height="15" uuid="f5b06eb5-023c-440d-b05c-617fd7e9b46b"/>
+				<textFieldExpression><![CDATA[$F{items_shoe_category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="276" y="0" width="92" height="15" uuid="23186f3b-82c2-4561-94da-d70bbf110352"/>
+				<textFieldExpression><![CDATA[$F{items_shoe_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="368" y="0" width="92" height="15" uuid="448c9f56-f5a2-44c5-bcdd-a9ca04586033"/>
+				<textFieldExpression><![CDATA[$F{items_shoe_Discription}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="460" y="0" width="92" height="15" uuid="996994d8-7fed-4aac-b68e-40756bbd83e0"/>
+				<textFieldExpression><![CDATA[$F{items_shoe_image}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="bc8630ac-0e7e-48d9-bdef-be416379e1fd"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="46ce590c-290f-4085-8435-1c6890891157"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="6fdb46ef-c2eb-48c8-8310-192c22098f3d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="4120ff45-c4f0-47b4-8d33-a37c66f836d9"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
